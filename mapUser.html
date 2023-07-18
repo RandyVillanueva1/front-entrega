@@ -14,8 +14,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -30,14 +29,13 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/map.css" rel="stylesheet">
 </head>
 
 <body>
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
-        <div id="spinner"
-            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -49,90 +47,44 @@
         <div class="container-xxl position-relative p-0">
             <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="" class="navbar-brand p-0">
-                    <h1 class="m-3">Estudio Mercado</h1>
+                    <h1 class="m-0">Estudio Mercado</h1>
                     <!-- <img src="img/logo.png" alt="Logo"> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
-            </nav>
-
-            <div class="container-xxl bg-primary hero-header">
-                <div class="container px-lg-5">
-                    <div class="row g-5 align-items-start">
-                        <div class="col-lg-8 text-center text-lg-start">
-                            <div class="col-lg-10 fadeInUp" data-wow-delay="0.1s">
-                                <div class="feature-item bg-light rounded text-center p-4">
-                                    <form onsubmit="return validarFormulario()">
-                                        <div class="row g-3">
-                                            <h1 class="text-center mb-5">Inicio Sesión</h1>
-                                            <div class="col-md-12">
-                                                <div class="form-floating">
-                                                    <input type="text" class="form-control" id="username"
-                                                        name="username" placeholder="Username" required minlength="3"
-                                                        maxlength="20">
-                                                    <label for="username">Username</label>
-                                                </div>
-                                                <span id="usernameError" class="error-message"></span>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-floating">
-                                                    <input type="password" class="form-control" id="password"
-                                                        name="password" placeholder="Password" required minlength="6">
-                                                    <label for="password">Password</label>
-                                                </div>
-                                                <span id="passwordError" class="error-message"></span>
-                                            </div>
-                                            <div class="col-12">
-                                                <button type="submit" class="btn btn-primary w-100 py-3">Iniciar Sesión</button>
-                                            </div>
-                                            <div class="row g-2">
-                                                <div class="col-md-12">
-                                                    <a class="btn btn-link" href="registry.html">Registrate</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <script>
-                                        function validarFormulario() {
-                                            var username = document.getElementById("username").value;
-                                            var password = document.getElementById("password").value;
-                                            var usernameError = document.getElementById("usernameError");
-                                            var passwordError = document.getElementById("passwordError");
-
-                                            // Validar el campo de nombre de usuario
-                                            if (username.length < 3 || username.length > 20) {
-                                                usernameError.textContent = "El nombre de usuario debe tener entre 3 y 20 caracteres.";
-                                                return false;
-                                            } else {
-                                                usernameError.textContent = "";
-                                            }
-
-                                            // Validar el campo de contraseña
-                                            if (password.length < 6) {
-                                                passwordError.textContent = "La contraseña debe tener al menos 6 caracteres.";
-                                                return false;
-                                            } else {
-                                                passwordError.textContent = "";
-                                            }
-
-                                            // Redirigir al usuario a about.html
-                                            window.location.href = "mapUser.html";
-
-                                            return false;
-                                        }
-                                    </script>
-                                </div>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link active">About</a>
+                        <a href="service.html" class="nav-item nav-link">Service</a>
+                        <a href="project.html" class="nav-item nav-link">Project</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="team.html" class="dropdown-item">Our Team</a>
+                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                <a href="404.html" class="dropdown-item">404 Page</a>
                             </div>
                         </div>
-                        <div class="col-lg-4 text-center text-lg-start">
-                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="" class="btn rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Get Started</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-primary hero-header">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-12 text-center">
+                            <div id="map" style="width: 100%; height: 400px;"></div>
+                            <script src="https://www.openlayers.org/api/OpenLayers.js"></script>
+                            <script src="script.js"></script>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Navbar & Hero End -->
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
@@ -207,6 +159,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/map.js"></script>
 </body>
 
 </html>
