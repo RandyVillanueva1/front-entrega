@@ -30,6 +30,25 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+
+.top{
+      top: 0;
+      height: 100vh;
+      background-color: rgba(0,0,0,.8);
+      display: grid;
+      place-items: center;
+      transition: .4s;
+    }
+    .close{
+      top: 5em;
+      left: 70%;
+    }
+    .translate{
+      transform: translateY(-100%);
+    }
+    </style>
 </head>
 
 <body>
@@ -82,7 +101,7 @@
                         <div class="feature-item bg-light rounded text-center p-4">
                            
                             
-                                    <table class="table table-hover">
+                                    <table class="table table-hover" id="table">
                                         <thead>
                                         <tr>
                                             <th scope="col">#</th>
@@ -103,8 +122,8 @@
                                             <td>Martínez</td>
                                             <td>mau.gutierrez@gmail.com</td>
                                             <td>5516983564</td>
-                                            <td><a href="#"><button type="button" class="btn btn-primary">Editar</button></a>
-                                                <a href="#"> <button type="button" class="btn btn-primary">Eliminar</button></a></td>
+                                            <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Editar</button>
+                                                <button type="button" class="btn btn-dark">Eliminar</button></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">2</th>
@@ -113,8 +132,8 @@
                                             <td>Moreno</td>
                                             <td>pedro.moreno@hotmail.com</td>
                                             <td>5598675298</td>
-                                            <td><a href="#"><button type="button" class="btn btn-primary">Editar</button></a>
-                                                <a href="#"> <button type="button" class="btn btn-primary">Eliminar</button></a></td>
+                                            <td><button type="button" class="btn btn-primary">Editar</button>
+                                                 <button type="button" class="btn btn-dark">Eliminar</button></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">3</th>
@@ -123,8 +142,8 @@
                                             <td>Perez</td>
                                             <td>leo.perezG@gmail.com</td>
                                             <td>5544689735</td>
-                                            <td><a href="#"><button type="button" class="btn btn-primary">Editar</button></a>
-                                                <a href="#"><button type="button" class="btn btn-primary">Eliminar</button></a></td>
+                                            <td><button type="button" class="btn btn-primary">Editar</button>
+                                                <button type="button" class="btn btn-dark">Eliminar</button></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">4</th>
@@ -133,8 +152,8 @@
                                             <td>Flores</td>
                                             <td>ada.macias@gmail.com</td>
                                             <td>5598673295</td>
-                                            <td><a href="#"><button type="button" class="btn btn-primary">Editar</button></a>
-                                                <a href="#"> <button type="button" class="btn btn-primary">Eliminar</button></a></td>
+                                            <td><button type="button" class="btn btn-primary">Editar</button>
+                                                <button type="button" class="btn btn-dark">Eliminar</button></td>
                                         </tr>
                                         <tr>
                                             <th scope="row" >5</th>
@@ -143,8 +162,8 @@
                                             <td>Hernandez</td>
                                             <td>Josh.olv24@gmail.com</td>
                                             <td>5544689735</td>
-                                            <td><a href="#"><button type="button" class="btn btn-primary">Editar</button></a>
-                                                <a href="#"> <button type="button" class="btn btn-primary">Eliminar</button></a></td>
+                                            <td><button type="button" class="btn btn-primary">Editar</button>
+                                                <button type="button" class="btn btn-dark">Eliminar</button></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">6</th>
@@ -153,8 +172,8 @@
                                             <td>Dominguez</td>
                                             <td>benja.orti54@gmail.com</td>
                                             <td>5544689735</td>
-                                            <td><a href="#"><button type="button" class="btn btn-primary">Editar</button></a>
-                                                <a href="#"><button type="button" class="btn btn-primary">Eliminar</button></a></td>
+                                            <td><button type="button" class="btn btn-primary">Editar</button>
+                                                <button type="button" class="btn btn-dark">Eliminar</button></td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -165,39 +184,53 @@
             </div>
         </div>
         <!-- Testimonial End -->
-        
+        <!-- Modal -->
+        <div class="position-absolute w-100 top translate" id="modal">
+            <form class="form-control w-50">
+              <h1 class="text-center">Modificar usuario</h1>
+              <div class="form-control border-white">
+                <label for="">Id :</label>
+                <input type="text" class="form-control w-25">
+              </div>
+              <div class="form-control border-white">
+                <label for="">Nombre :</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-control border-white">
+                <label for="">Apellido paterno :</label>
+                <input type="text" class="form-control w-25">
+              </div>
+              <div class="form-control border-white">
+                <label for="">Apellido Materno :</label>
+                <input type="text" class="form-control w-25">
+              </div>
+              <div class="form-control border-white">
+                <label for="">Correo :</label>
+                <input type="text" class="form-control w-25">
+              </div>
+              <div class="form-control border-white">
+                <label for="">Telefono :</label>
+                <input type="text" class="form-control w-25">
+              </div>
+              <div class="form-control border-white">
+                <button class="btn btn-primary">Guardar!</button>
+              </div>
+              
+            </form>
+            <button class="position-absolute btn btn-danger close">Cerrar</button>
+            </div>
+
+
+
+            <div class="position-absolute w-100 top translate" id="modales">
+                <form class="form-control w-50">
+                  <h1 class="text-center">Usuario eliminado exitosamente!!</h1>
+                <button class="position-absolute btn btn-danger close">Cerrar</button>
+                </div>
 
         <!-- Footer Start -->
         <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
-            <div class="container py-5 px-lg-5">
-                <div class="row">
-                    <div class="col-md-6 ">
-                        <p class="section-title text-white h5 mb-4">Contacto<span></span></p>
-                        <p><i class="fa fa-map-marker-alt me-3"></i>Calle Rio Panuco y Rio Lerma, Municipio Rio
-                            mississipi 49 dep. 1402 piso 14 Cuauhtémoc C.P. 06500 CDMX</p>
-                        <p><i class="fa fa-phone-alt me-3"></i>+52 55 5532 2480</p>
-                        <p><i class="fa fa-envelope me-3"></i>contacto@eclipsemex.com</p>
-                        <div class="d-flex pt-2">
-                            <a class="btn btn-outline-light btn-social" href="https://twitter.com/eclipsemex?lang=es"
-                                target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social"
-                                href="https://www.facebook.com/grupoeclipsetelecomunicaciones/" target="_blank"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social"
-                                href="https://www.linkedin.com/company/eclipsetelecomunicaciones/?originalSubdomain=mx"
-                                target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 ">
-                        <p class="section-title text-white h5 mb-4">Información<span></span></p>
-                        <a class="btn btn-link" href="#">Sobre nosotros</a>
-                        <a class="btn btn-link" href="#">Contáctanos</a>
-                        <a class="btn btn-link" href="#">Política de privacidad</a>
-                        <a class="btn btn-link" href="#">Términos y condiciones</a>
-                    </div>
-                </div>
-            </div>
+            
             <div class="container px-lg-5">
                 <div class="copyright">
                     <div class="row">
@@ -240,6 +273,40 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+const table = document.getElementById("table");
+const modal = document.getElementById("modal");
+const modales = document.getElementById("modales");
+const inputs = document.querySelectorAll("input");
+let count = 0;
+
+window.addEventListener("click", (e) => {
+  if (e.target.matches(".btn-primary")) {
+    let data = e.target.parentElement.parentElement.children;
+    fillData(data);
+    modal.classList.toggle("translate");
+  }
+  if (e.target.matches(".btn-dark")) {
+    let data = e.target.parentElement.parentElement.children;
+    fillData(data);
+    modales.classList.toggle("translate");
+  }
+
+  if (e.target.matches(".btn-danger")) {
+  modal.classList.toggle("translate");
+  count=0
+  }
+});
+
+const fillData = (data) => {
+  for (let index of inputs) {
+    index.value = data[count].textContent;
+    console.log(index);
+    count += 1;
+  }
+};
+    </script>
 </body>
 
 </html>
