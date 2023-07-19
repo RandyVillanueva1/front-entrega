@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Estudio Mercado</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/registry.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-3">Estudio Mercado</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </nav>
+
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5 align-items-start">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <div class="col-lg-8 fadeInUp" data-wow-delay="0.1s">
+                                <div class="feature-item bg-light rounded text-center p-4">
+                                    <form onsubmit="return validarFormulario()">
+                                        <div class="row g-3">
+                                            <h1 class="text-center mb-5">Cliente</h1>
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="name"
+                                                        name="name" placeholder="Nombre" required minlength="3"
+                                                        maxlength="20">
+                                                    <label for="name">Nombre</label>
+                                                </div>
+                                                <span id="nameError" class="error-message"></span>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="apellido_pa"
+                                                        name="apellido_pa" placeholder="Apellido Paterno" required minlength="3"
+                                                        maxlength="20">
+                                                    <label for="apellido_pa">Apellido Paterno</label>
+                                                </div>
+                                                <span id="apellidoPaError" class="error-message"></span>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="apellido_ma"
+                                                        name="apellido_ma" placeholder="Apellido Materno" required minlength="3"
+                                                        maxlength="20">
+                                                    <label for="apellido_ma">Apellido Materno</label>
+                                                </div>
+                                                <span id="apellidoMaError" class="error-message"></span>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="email"
+                                                        name="email" placeholder="Email" required minlength="3"
+                                                        maxlength="20">
+                                                    <label for="email">Email</label>
+                                                </div>
+                                                <span id="emailError" class="error-message"></span>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <input type="tel" class="form-control" id="telefono"
+                                                        name="telefono" placeholder="telefono" required minlength="3"
+                                                        maxlength="20">
+                                                    <label for="telefono">Telefono</label>
+                                                </div>
+                                                <span id="telefonoError" class="error-message"></span>
+                                            </div>
+                                            <div class="col-12">
+                                                    <button type="submit" class="btn btn-primary w-100 py-3">Registro</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <script>
+                                        function validarFormulario() {
+                                            var email = document.getElementById("email").value;
+                                            var emailError = document.getElementById("emailError");
+
+                                            // Validar el campo de nombre de usuario
+                                            if (email.length < 3 || email.length > 20) {
+                                                emailError.textContent = "El nombre de usuario debe tener entre 3 y 20 caracteres.";
+                                                return false;
+                                            } else {
+                                                emailError.textContent = "";
+                                            }
+
+                                            // Redirigir al usuario a about.html
+                                            window.location.href = "mapUser.html";
+
+                                            return false;
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 text-center text-lg-start">
+                            <img class="img-fluid animated zoomIn" src="img/hero.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row">
+                    <div class="col-md-6 ">
+                        <p class="section-title text-white h5 mb-4">Contacto<span></span></p>
+                        <p><i class="fa fa-map-marker-alt me-3"></i>Calle Rio Panuco y Rio Lerma, Municipio Rio
+                            mississipi 49 dep. 1402 piso 14 Cuauhtémoc C.P. 06500 CDMX</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+52 55 5532 2480</p>
+                        <p><i class="fa fa-envelope me-3"></i>contacto@eclipsemex.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://twitter.com/eclipsemex?lang=es"
+                                target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://www.facebook.com/grupoeclipsetelecomunicaciones/" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social"
+                                href="https://www.linkedin.com/company/eclipsetelecomunicaciones/?originalSubdomain=mx"
+                                target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 ">
+                        <p class="section-title text-white h5 mb-4">Información<span></span></p>
+                        <a class="btn btn-link" href="#">Sobre nosotros</a>
+                        <a class="btn btn-link" href="#">Contactanos</a>
+                        <a class="btn btn-link" href="#">Politica de privacidad</a>
+                        <a class="btn btn-link" href="#">Terminos y condiciones</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Estudio Mercado</a>, Todos los derechos reservados.
+
+                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                            Diseñado por <a class="border-bottom" href="https://www.eclipsemex.com/">Eclipse
+                                Telecomunicaciones S.A. de C.V.</a>
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                            <div class="footer-menu">
+                                <a href="">Home</a>
+                                <a href="">Cookies</a>
+                                <a href="">Help</a>
+                                <a href="">FQAs</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
